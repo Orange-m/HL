@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的红旅</title>
+    <!-- 引入bootstrap框架的样式 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/font.css">
+    <!-- 引入自己less文件 -->
+    <link rel="stylesheet/less" href="./less/index.less">
+    <!-- 引入less的编译器文件 -->
+    <script src="./js/less.js"></script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <!-- 头部 -->
+        <header id="header">
+            <!-- 菜单栏 -->
+            <div class="header-menu">
+                <a href="javascript:void(0)">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </a>
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="请输入要查询的内容">
+                <i class="glyphicon glyphicon-search"></i>
+            </div>
+        </header>
+        <!-- 所有内容的区域 -->
+        <div id="main" class="clearfix">
+            <div class="main-list">
+                <div class="main-left">
+                    <!-- 左侧菜单栏 -->
+                    <div class="category">
+                        <ul class="category-list">
+                            <li>
+                                <a href="./catecontent.html" class="strip-title">连载动漫
+                                            <i class="glyphicon glyphicon-menu-right"></i>
+                                        </a>
+                            </li>
+                            <li>
+                                <a href="./catelist.html" class="strip-title">专题列表
+                                            <i class="glyphicon glyphicon-menu-right"></i>
+                                        </a>
+                            </li>
+                            <li><a href="javascript:void(0)">关于</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-right">
+                    <!-- 轮播图区域 -->
+                    <div class="slide" id="slide">
+                        <div class="wrapper">
+                            <!-- 轮播的图片 -->
+                            <div class="wrapper-list">
+                                <!-- <ul class="slide-img clearfix">
+                                            克隆的最后一张图片,闪现效果
+                                            <li>
+                                                <a href="javascript:void(0):">
+                                                    <img src="./img/lunbo5.jpg" alt="">
+                                                </a>
+                                                <div class="slide-title">
+                                                    红旅动漫资源分享群开放啦!!!
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="slide-point">
+                                        </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 动漫内容区域 -->
+                    <div class="animation" id="animation">
+                        <div class="animation-list">
+                            <div class="animation-menu">
+                                <ul class="clearfix bb">
+                                    <li class="tab-item active"><a href="javascript:;">新增连载</a></li>
+                                    <li class="tab-item"><a href="javascript:;">新增完结</a></li>
+                                    <li class="tab-item"><a href="javascript:;">推荐连载</a></li>
+                                    <li class="tab-item"><a href="javascript:;">推荐完结</a></li>
+                                </ul>
+                            </div>
+                            <div class="clearfix animation-content">
+                                <ul class="clearfix animation-ul tap-pane" id="animation-ul">
+                                    <!-- <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="./img/image19.jpg" alt="">
+                                                    <p class="animation-update">连载至<span>12</span>集</p>
+                                                    <p class="animation-name">灵能百分百</p>
+                                                </a>
+                                            </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/artTemplate/template.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- 创建轮播图的模板 -->
+    <script type="text/html" id="slideTmp">
+        <ul class="slide-img clearfix">
+            {{each rows as value i}}
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="{{value.img}}" alt="">
+                </a>
+                <div class="slide-title">
+                    {{value.title}}
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <ul class="slide-point">
+            {{each rows as value i}}
+            <li></li>
+            {{/each}}
+        </ul>
+    </script>
+    <!-- tab栏的模板 -->
+    <script type="text/html" id="tab1Tmp">
+        {{each rows as value i}}
+        <li>
+            <a href="javascript:void(0)">
+                <img src="{{value.img}}" alt="">
+                <p class="animation-update">{{value.update}}</p>
+                <p class="animation-name">{{value.name}}</p>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+</body>
+
+</html>

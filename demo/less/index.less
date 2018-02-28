@@ -1,0 +1,264 @@
+// 引入公共样式
+@import "base.less";
+html,body {
+    width:100%;
+    height:100%;
+}
+// 居中容器
+#container {
+    @media (min-width:768px){
+        width:640px;
+    }
+    // width:640px;
+    margin:0 auto;
+    border: 1px solid #eee;
+    border-width: thin;
+    padding:0;
+    box-sizing: border-box;
+    position: relative;
+    width:100%;
+    overflow: hidden;
+}
+// 头部样式
+#header {
+    position: fixed;
+    width:100%;
+    height: 40px;
+    z-index: 999;
+    background-color: #999;
+    .header-menu {
+        position: absolute;
+        left:0;
+        top:0;
+        text-align: center;
+        >a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            line-height: 40px;
+            color:@main-color;
+        }
+    }
+    .header-search {
+        height: 100%;
+        margin-left:40px;
+        position: relative;
+        >input {
+            height: 100%;
+            width:100%;
+            text-indent: 10px;
+            color:#000;
+            font-size: 12px;
+            background-color: #999;
+        }
+        >i {
+            position: absolute;
+            right:0;
+            top:0;
+            width: 40px;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+            color:@main-color;
+        }
+    }
+}
+#main {
+    padding-top:40px;
+    .main-list {
+        width: 200%;
+        overflow: hidden;
+        transform: translateX(-50%);
+        .main-left {
+            float:left;
+            width:50%;
+            // display: none;
+            // width:0;
+            // transform: translateX(-100%);
+            // 左侧菜单栏内容
+            .category {
+                border: 1px solid #666;
+                border-width:thin;
+                box-sizing: border-box;
+                .category-list {
+                    padding:5px 5px 20px 5px; 
+                    >li {
+                        >a {
+                            display: block;
+                            border-bottom: 1px solid #666;
+                            border-width: thin;
+                            font-size: 12px;
+                            height: 30px;
+                            line-height: 30px;
+                            position: relative;
+                            padding-left:5px;
+                            text-decoration:none;
+                            >i {
+                                position: absolute;
+                                right:0;
+                                top:10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .main-right {
+            float:left;
+            // width:100%/2;
+            width:50%;
+            // 轮播图区域
+            #slide {
+                overflow: hidden;
+                .wrapper {
+                    .wrapper-list {
+                        position: relative;
+                        z-index: 999;
+                        width:100%;
+                        .slide-img {
+                            width:400%;
+                            transform: translateX(-25%);
+                            >li {
+                                float:left;
+                                width: 25%;
+                                position: relative;
+                                >a {
+                                    display: block;
+                                    >img {
+                                        width:100%;
+                                    }   
+                                }
+                                >div {
+                                    background-color: rgba(0, 0, 0, 0.5);
+                                    position: absolute;
+                                    bottom:0;
+                                    width:100%;
+                                    font-size: 15px;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    color:#ccc;
+                                    padding-left:20px;
+                                }
+                            }
+                        }
+                    }
+                    .slide-point {
+                        position: absolute;
+                        bottom:10px;
+                        right:0;
+                        >li {
+                            width: 8px;
+                            height: 8px;
+                            // border: 1px solid #ccc;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            float:left;
+                            margin-right:10px;
+                            &.active {
+                                background-color: red;
+                            }
+                        }
+                    }
+                }
+            }
+            // 动漫内容区域 
+            #animation {
+                .animation-list {
+                    .animation-menu {
+                        // margin-bottom:20px;
+                        >ul {
+                            // border-bottom:1px solid @border-color;
+                            border-width: thin;
+                            padding: 5px 5px 0 5px;
+                            >li {
+                                float:left;
+                                width:100%/4;
+                                // border-right:1px solid #ccc;
+                                // border-right-width: thin;
+                                padding: 10px 0;
+                                box-sizing: border-box;
+                                &.active {
+                                    border-bottom:2px solid @main-color;
+                                }
+                                &.active a {
+                                    color:red;
+                                    // border-bottom:2px solid @main-color;
+                                }
+                                &:last-of-type a {
+                                    border-right:none;
+                                }
+                                >a {
+                                    display: block;
+                                    text-align:center;
+                                    height:30px;
+                                    line-height: 28px;
+                                    color:#000;
+                                    font-weight: 600;
+                                    font-size: 12px;
+                                    border-right:1px solid #ccc;
+                                    border-right-width: thin;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+                    }
+                    .animation-content {
+                        position: relative;
+                        padding:20px 0;
+                        >ul {
+                            &.animation-ul {
+                                // padding:0 20px;
+                                >li {
+                                    float: left;
+                                    width:100%/2;
+                                    margin-bottom:10px;
+                                    padding:0 20px;
+                                    // box-shadow: 0 0 1px #ccc;
+                                    // border-width: thin;
+                                    // height:288px;
+                                    >a {
+                                        display: block;
+                                        text-align:center;
+                                        text-decoration:none;
+                                        position: relative;
+                                        color: #ccc;
+                                        // padding-bottom:10px;
+                                        // height:100%;
+                                        border:1px solid #ccc;
+                                        border-width: thin;
+                                        >img {
+                                            width:182px;
+                                            height:220px;
+                                        }
+                                        .animation-update {
+                                            position: absolute;
+                                            bottom:30px;
+                                            width:100%;
+                                            height: 39px;
+                                            line-height: 39px;
+                                            background-color: rgba(0,0,0,0.3);
+                                        }
+                                        .animation-name {
+                                            display: -webkit-box;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-line-clamp:1;
+                                            overflow: hidden;
+                                            height:30px;
+                                            line-height: 30px;
+                                            color:red;
+                                        }
+                                    }
+                                }
+                            }                    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

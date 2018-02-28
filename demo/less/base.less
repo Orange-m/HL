@@ -1,0 +1,93 @@
+/* 定义京东主体色变量 */
+@main-color:red;
+@text-color:#000;
+@border-color:#ccc;
+/* 清除浏览器的默认样式 */
+ * {
+    margin: 0px;
+    padding: 0px;
+    /* 设置盒模型包含边框 padding和 内容 */
+    box-sizing: border-box;
+    /* 清除移动端点击高亮的背景色 （按住才有用）*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    border: 0;
+    outline: 0;
+}
+
+img {
+    /* 去除图片对齐3px的问题 */
+    vertical-align: middle;
+}
+
+i {
+    font-style: normal;
+}
+
+h1 {
+    font-weight: normal;
+}
+ul {
+    margin:0;
+}
+
+/* 公共类名 */
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+    line-height: 0;
+    height: 0;
+    visibility: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin:0;
+}
+.hasclass {
+    opacity: 1;
+}
+.bt{
+    border-top: 1px solid #ccc;
+}
+.br{
+    border-right: 1px solid #ccc;
+}
+.bb{
+    border-bottom: 1px solid #ccc;
+}
+.bl{
+    border-left: 1px solid #ccc;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+p {
+    margin:0;
+}

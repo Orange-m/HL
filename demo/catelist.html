@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分类页面专题列表</title>
+    <!-- 引入bootstrap框架的样式 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/font.css">
+    <!-- 引入自己less文件 -->
+    <link rel="stylesheet/less" href="./less/catelist.less">
+    <!-- 引入less的编译器文件 -->
+    <script src="./js/less.js"></script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <!-- 左侧菜单栏内容 -->
+        <div class="left-menu" id="left-menu">
+          <div class="features-list">
+                    <div class="strip-title">
+                        <a href="./index.html" class="glyphicon glyphicon-menu-left"></a>
+                        <a href="#">
+                            专题列表
+                        </a>
+                    </div>
+                    <div class="features-content">
+                        <div class="contents">
+                            
+                        </div>
+                        <!-- <a href="#" class="features-img">
+                            <img src="./img/topics2.jpg" alt="">
+                            <p class="features-title">
+                                    2016年四月新番
+                            </p>
+                        </a> -->
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./lib/artTemplate/template.js"></script>
+    <script src="./js/catelist.js"></script>
+    <script type="text/html" id="contentTmp">
+        {{each rows as value i}}
+        <a href="#" class="features-img">
+            <img src="{{value.img}}" alt="">
+            <p class="features-title">
+                    {{value.title}}
+            </p>
+        </a>
+        {{/each}}
+    </script>
+</body>
+
+</html>
